@@ -13,9 +13,11 @@ function setUp() {
   // get ID of the startStop button
   var startStop = document.getElementById("startStop");
 
+  // event listern for the start/stop button
   startStop.addEventListener("click", function() {
     debugger
 
+    // start timer if not already runnig, else, stop the timer
     if( started === false ) {
       startTimer();
 
@@ -26,15 +28,17 @@ function setUp() {
   });
 }
 
-// start timer function
+// start the timer, incrementing the time every 100ths of a second
 function startTimer() {
   if( started === false ) {
 
-  // how to call a function every Nth seconds https://stackoverflow.com/questions/2170923/whats-the-easiest-way-to-call-a-function-every-5-seconds-in-jquery
+    // how to call a function every Nth seconds https://stackoverflow.com/questions/2170923/whats-the-easiest-way-to-call-a-function-every-5-seconds-in-jquery
+    // for displaying milliseconds see https://codepen.io/_Billy_Brown/pen/dbJeh
     interval = setInterval(function() {
+      debugger
       time++;
-      document.getElementById("timer").innerHTML = "Time elapsed: " + time;
-    }, 1000);
+      document.getElementById("timer").innerHTML = "Time elapsed: " +  time;
+    }, 100);
 
     // toggle started as timer has been kicked off
     started = true;
