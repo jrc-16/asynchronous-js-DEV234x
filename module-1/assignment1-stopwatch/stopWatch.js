@@ -37,7 +37,7 @@ function startTimer() {
     interval = setInterval(function() {
       debugger
       time++;
-      document.getElementById("timer").innerHTML = "Time elapsed: " +  time;
+      document.getElementById("timer").innerHTML = "Time elapsed: " +  (time / 10).toFixed(2);// milliseconds cunnrelty based on using https://stackoverflow.com/questions/11524619/adding-decimal-place-into-number-with-javascript
     }, 100);
 
     // toggle started as timer has been kicked off
